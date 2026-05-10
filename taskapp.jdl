@@ -1,0 +1,12 @@
+entity Task {
+  title String required,
+  description TextBlob,
+  dueDate Instant,
+  isComplete Boolean,
+  isPublic Boolean
+}
+
+// Relationship: A Task belongs to a User
+relationship ManyToOne {
+  Task{user(login)} to User with builtInEntity
+}
